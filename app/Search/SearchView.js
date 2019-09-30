@@ -6,9 +6,7 @@ export class SearchView {
   }
 
   viewFound() {
-    if (this.search.value !== '') {
-      this.controller.router.product.updateRender(this.controller.getFindedObject(this.search.value.toLowerCase()));
-    }
+    this.controller.controllers.product.updateRender(this.controller.getFindedObject(this.search.value.toLowerCase()));
   }
 
 }

@@ -5,14 +5,14 @@ export class ProductView {
   }
 
   render(arrayOfObject) {
+    this.controller.controllers.warehouse.currentSet = arrayOfObject;
     this.root.innerHTML = '';
 
     arrayOfObject.forEach((item) => {
       let newDiv = document.createElement('div');
-
+      newDiv.setAttribute('class', 'col s12 m4');
       newDiv.innerHTML = `
-        <div class="col s12 m4">
-          <div class="card sticky-action hoverable">
+        <div class="card sticky-action hoverable">
             <div class="card-image">
               <img class="materialboxed" src="${item.url}">
             </div>
@@ -51,8 +51,7 @@ export class ProductView {
                 ${item.type === 'bird'?`<p><strong>Flying:</strong> ${item.flying}</p><p><strong>Talking:</strong> ${item.talking}</p><p><strong>Singing:</strong> ${item.singing}</p>`:''}
                 
             </div>
-          </div>
-        </div>`;
+          </div>`;
 
       this.root.append(newDiv);
     })

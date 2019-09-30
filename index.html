@@ -10,7 +10,7 @@
 </head>
 <body>
 <script defer type="text/javascript" src="./script/materialize.js"></script>
-<script defer type="module" src="script/materialize_initial.js"></script>
+<script defer type="module" src="script/initialization.js"></script>
 <script defer type="module" src="./app/main.js"></script>
 <!--<div class="container">-->
 <div class="">
@@ -50,6 +50,12 @@
           </li>
         </ul>
         </li>
+        <li>
+          <a href="#!">
+            <i class="material-icons left">shopping_cart</i>
+            Cart
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -83,39 +89,16 @@
 
 
 
-
-    <div class="col m2">
+    <!--ASIDE MENU-->
+    <div class="col m3">
 
       <div class="show-on-medium-and-up">
       <ul class="collapsible">
         <li class="active">
           <div class="collapsible-header"><i class="material-icons">turned_in</i><span class="truncate">Category</span></div>
           <div class="collapsible-body">
-            <form action="#">
-              <p>
-                <label>
-                  <input type="checkbox" name="type" value="cat" />
-                  <span class="truncate">Cats</span>
-                </label>
-              </p>
-              <p>
-                <label>
-                  <input type="checkbox" name="type" value="dog" />
-                  <span class="truncate">Dogs</span>
-                </label>
-              </p>
-              <p>
-                <label>
-                  <input type="checkbox" name="type" value="bird" />
-                  <span class="truncate">Birds</span>
-                </label>
-              </p>
-              <p>
-                <label>
-                  <input type="checkbox" name="type" value="fish" />
-                  <span class="truncate">Fish</span>
-                </label>
-              </p>
+            <form id="category-root" action="#">
+              <!--CATEGORY-->
             </form>
           </div>
         </li>
@@ -292,9 +275,15 @@
 
 
 
+    <!--MAIN CONTENT-->
+    <div class="col m9">
+      <div class="row">
+        <!--SORT-->
+      </div>
+      <div id="products-root" class="row">
+        <!--LIST OF PRODUCT-->
+      </div>
 
-    <div id="products-root" class="col m10">
-      <!--LIST OF PRODUCT-->
 
     </div>
   </div>

@@ -1,3 +1,3 @@
-import { Router } from '../app/Router.js';
+import { Controllers } from './Controllers.js';
 
-const router = new Router();
+export const controllers = new Controllers();

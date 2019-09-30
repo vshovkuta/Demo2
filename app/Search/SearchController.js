@@ -1,9 +1,9 @@
-import { SearchModel } from './Model.js';
-import { SearchView } from './View.js';
+import { SearchModel } from './SearchModel.js';
+import { SearchView } from './SearchView.js';
 
 export class SearchController {
-  constructor(router) {
-    this.router = router;
+  constructor(controllers) {
+    this.controllers = controllers;
     this.model = new SearchModel(this);
     this.view = new SearchView(this);
   }

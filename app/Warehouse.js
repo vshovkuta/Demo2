@@ -1,6 +1,7 @@
 export class Warehouse {
   constructor() {
     this.goods;
+    this.currentSet;
     this.getLocaleStorage();
   }
 
