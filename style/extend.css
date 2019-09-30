@@ -1,0 +1,53 @@
+.gold {
+    background-color: gold !important;
+}
+
+.gold-text {
+    color: gold !important;
+}
+
+.faun {
+    background-color: #e5aa70 !important;
+}
+
+.faun-text {
+    color: #e5aa70 !important;
+}
+
+.velvety {
+    background-color: #864747 !important;
+}
+
+.velvety-text {
+    color: #864747 !important;
+}
+
+.smut {
+    background-color: #B07C4A !important;
+}
+
+.smut-text {
+    color: #B07C4A !important;
+}
+
+.sorrel {
+    background-color: #81513a !important;
+}
+
+.sorrel-text {
+    color: #81513a !important;
+}
+
+.wild {
+    background: linear-gradient(135deg, rgba(255,191,0,1) 0%, rgba(0,0,0,1) 26%, rgba(255,191,0,1) 50%, rgba(0,0,0,1) 80%, rgba(255,191,0,1) 100%) !important;
+}
+
+.wild-text {
+    background: linear-gradient(135deg, rgba(255,191,0,1) 0%, rgba(0,0,0,1) 26%, rgba(255,191,0,1) 50%, rgba(0,0,0,1) 80%, rgba(255,191,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stroke {
+    text-shadow: gray 0 0 2px;
+}

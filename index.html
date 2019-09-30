@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./style/materialize.css">
+  <link rel="stylesheet"  href="./style/extend.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<script defer type="text/javascript" src="./script/materialize.js"></script>
+<script defer type="module" src="script/materialize_initial.js"></script>
+<script defer type="module" src="./app/main.js"></script>
+<!--<div class="container">-->
+<div class="">
+
+   <nav class="grey">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img src="./data/img/logo.png"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <nav class="z-depth-0 transparent ">
+            <div class="nav-wrapper left">
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" class="autocomplete" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </li>
+        <li>
+          <a class="dropdown-trigger" href="#!" data-target="dropdownLanguage">Language
+            <i class="material-icons right">arrow_drop_down</i>
+            <i class="material-icons left">public</i></a>
+          </a>
+          <ul id="dropdownLanguage" class="dropdown-content">
+          <li>
+            <a href="#!">English</a>
+          </li>
+          <li>
+            <a href="#!">Ukrainian</a>
+          </li>
+          <li>
+            <a href="#!">Russian</a>
+          </li>
+        </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <nav class="z-depth-0">
+        <div class="nav-wrapper grey">
+          <form>
+            <div class="input-field">
+              <input id="search-mobile" type="search" class="autocomplete" required>
+              <label class="label-icon" for="search-mobile"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
+    </li>
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-language">
+      Chose language
+      <i class="material-icons right">arrow_drop_down</i>
+      <i class="material-icons left">public</i></a>
+    </li>
+
+  </ul>
+
+
+
+
+  <div class="row">
+
+
+
+
+    <div class="col m2">
+
+      <div class="show-on-medium-and-up">
+      <ul class="collapsible">
+        <li class="active">
+          <div class="collapsible-header"><i class="material-icons">turned_in</i><span class="truncate">Category</span></div>
+          <div class="collapsible-body">
+            <form action="#">
+              <p>
+                <label>
+                  <input type="checkbox" name="type" value="cat" />
+                  <span class="truncate">Cats</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="type" value="dog" />
+                  <span class="truncate">Dogs</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="type" value="bird" />
+                  <span class="truncate">Birds</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="type" value="fish" />
+                  <span class="truncate">Fish</span>
+                </label>
+              </p>
+            </form>
+          </div>
+        </li>
+        <li class="">
+          <div class="collapsible-header"><i class="material-icons">wc</i><span class="truncate">Gender</span></div>
+          <div class="collapsible-body">
+            <form action="#">
+            <p>
+              <label>
+                <input type="checkbox" name="gender" value="male" />
+                <span class="truncate">male</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" name="gender" value="female" />
+                <span class="truncate">
+                    female
+                  </span>
+              </label>
+            </p>
+            </form>
+          </div>
+        </li>
+        <li class="">
+          <div class="collapsible-header"><i class="material-icons">palette</i><span class="truncate">Colour</span></div>
+          <div class="collapsible-body">
+            <form action="#">
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="black" />
+                  <span class="truncate">
+                    <i class="material-icons left black-text stroke">lens</i>
+                    black
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="blue" />
+                  <span class="truncate">
+                    <i class="material-icons left blue-text stroke">lens</i>
+                    blue
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="brown" />
+                  <span class="truncate">
+                    <i class="material-icons left brown-text stroke">lens</i>
+                    brown
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="faun" />
+                  <span class="truncate">
+                    <i class="material-icons left faun-text stroke">lens</i>
+                    faun
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="gold" />
+                  <span class="truncate">
+                    <i class="material-icons left gold-text stroke">lens</i>
+                    gold
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="green" />
+                  <span class="truncate">
+                    <i class="material-icons left green-text stroke">lens</i>
+                    green
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="grey" />
+                  <span class="truncate">
+                    <i class="material-icons left grey-text stroke">lens</i>
+                    grey
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="orange" />
+                  <span class="truncate">
+                    <i class="material-icons left orange-text stroke">lens</i>
+                    orange
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="red" />
+                  <span class="truncate">
+                    <i class="material-icons left red-text stroke">lens</i>
+                    red
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="smut" />
+                  <span class="truncate">
+                    <i class="material-icons left smut-text stroke">lens</i>
+                    smut
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="sorrel" />
+                  <span class="truncate">
+                    <i class="material-icons left sorrel-text stroke">lens</i>
+                    sorrel
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="velvety" />
+                  <span class="truncate">
+                    <i class="material-icons left velvety-text stroke">lens</i>
+                    velvety
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="white" />
+                  <span class="truncate">
+                    <i class="material-icons left white-text stroke">lens</i>
+                    white
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="wild" />
+                  <span class="truncate">
+                    <i class="material-icons left wild-text">lens</i>
+                    wild
+                  </span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" name="colour" value="yellow" />
+                  <span class="truncate">
+                    <i class="material-icons left yellow-text stroke">lens</i>
+                    yellow
+                  </span>
+                </label>
+              </p>
+
+
+
+            </form>
+          </div>
+        </li>
+      </ul>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="products-root" class="col m10">
+      <!--LIST OF PRODUCT-->
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
