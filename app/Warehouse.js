@@ -1,11 +1,7 @@
 export class Warehouse {
   constructor() {
     this.goods;
-    
-    async () => {
-      await this.getLocaleStorage();
-    } 
-
+    this.getLocaleStorage();
   }
 
   setLocaleStorage(arrayOfObject) {
