@@ -11,7 +11,7 @@ export class ProductView {
       let newDiv = document.createElement('div');
 
       newDiv.innerHTML = `
-        <div class="col s12 m6 l3">
+        <div class="col s12 m4">
           <div class="card sticky-action hoverable">
             <div class="card-image">
               <img class="materialboxed" src="${item.url}">
