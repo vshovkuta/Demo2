@@ -11,12 +11,11 @@ export class Warehouse {
 
   async getLocaleStorage() {
     if (localStorage.getItem('goods')) {
-      this.goods = JSON.parse(localStorage.getItem('goods'));
+      this.currentSet = this.goods = JSON.parse(localStorage.getItem('goods'));
     } else {
       await fetch('./goods.json').then((result) => result.json())
-                                 .then((result) => this.goods = result)
+                                 .then((result) => this.currentSet = this.goods = result)
                                  .then((result) => this.setLocaleStorage(result));
     }
   }
-
 }
