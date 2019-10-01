@@ -9,7 +9,7 @@ export class CategoryView {
     newP.innerHTML = `
         <label>
           <input type="radio" checked class="with-gap" name="type" value="all" />
-          <span class="truncate">All</span>
+          <span class="truncate">ALL</span>
         </label>
       `;
     this.root.append(newP);
