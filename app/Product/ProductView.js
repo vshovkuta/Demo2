@@ -5,7 +5,7 @@ export class ProductView {
   }
 
   render(arrayOfObject) {
-    this.controller.controllers.warehouse.currentSet = arrayOfObject;
+    // this.controller.controllers.warehouse.currentSet = arrayOfObject;
     this.root.innerHTML = '';
 
     arrayOfObject.forEach((item) => {
