@@ -12,4 +12,8 @@ export class SearchController {
     return this.model.getArrayOfObject(string);
   }
 
+  updateProducts() {
+    this.view.render();
+  }
+
 }
