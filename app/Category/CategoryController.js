@@ -23,5 +23,5 @@ export class CategoryController {
     this.controllers.product.updateRender(this.model.getArrayOfProductsByCategory(category));
   }
 
-  setCallToCategory
+//   setCallToCategory
 }
