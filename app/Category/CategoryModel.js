@@ -15,10 +15,10 @@ export class CategoryModel {
 
   getArrayOfProductsByCategory(category) {
     if(category === 'all') {
-      return this.controller.controllers.warehouse.goods;
+      return this.controller.controllers.warehouse.currentSet = this.controller.controllers.warehouse.goods;
     }
 
-    return this.controller.controllers.warehouse.goods.filter((item) => {
+    return this.controller.controllers.warehouse.currentSet = this.controller.controllers.warehouse.goods.filter((item) => {
       return item.type.toLowerCase() === category.toLowerCase();
     })
   }
