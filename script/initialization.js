@@ -27,11 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   let data = {};
+  controllers.warehouse.goods.forEach((item) => data[item.name] = item.url);
+
+  let elems = document.querySelectorAll('.autocomplete');
+  let instances = M.Autocomplete.init(elems, {
+    data,
+    onAutocomplete: () => controllers.search.updateProducts(),
+  });
+});
+
+document.addEventListener('click', function() {
+  let data = {};
   controllers.warehouse.currentSet.forEach((item) => data[item.name] = item.url);
 
   let elems = document.querySelectorAll('.autocomplete');
   let instances = M.Autocomplete.init(elems, {
     data,
-    onAutocomplete: () => controllers.search.view.viewFound(),
+    onAutocomplete: () => controllers.search.updateProducts(),
   });
 });
