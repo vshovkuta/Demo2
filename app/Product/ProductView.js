@@ -31,7 +31,7 @@ export class ProductView {
               <p><strong>Rapacity:</strong> ${item.rapacity}</p>
             </div>
             <div class="card-action flex-between">
-              <span class="right">Price: <strong>$${item.price}</strong></span>
+              <span class="right">Price:<br/><strong>$${item.price}</strong></span>
              <span class="card-action-button"><a class="btn truncate">
                 <i class="material-icons left">add_shopping_cart</i>
                 BUY
