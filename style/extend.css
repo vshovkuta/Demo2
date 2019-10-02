@@ -67,6 +67,10 @@
     align-items: center;
 }
 
+.flex-wrap .col {
+    display: flex;
+}
+
 .card {
     display: flex;
     flex-direction: column;
