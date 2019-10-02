@@ -30,7 +30,7 @@ export class ProductView {
               <p><strong>Color:</strong> ${item.color.map((colour) => `<span class="truncate"><i class="material-icons left ${colour}-text ${colour !== 'wild'? 'stroke':''}">lens</i>${colour}</span>`).join('')}</p>
               <p><strong>Rapacity:</strong> ${item.rapacity}</p>
             </div>
-            <div class="card-action">
+            <div class="card-action flex-between">
               <span class="right">Price: <strong>$${item.price}</strong></span>
              <span class=""><a class="btn truncate">
                 <i class="material-icons left">add_shopping_cart</i>
