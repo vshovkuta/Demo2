@@ -2,6 +2,7 @@ import { Warehouse } from '../app/Warehouse.js';
 import { ProductController } from './Product/ProductController.js';
 import { SearchController} from './Search/SearchController.js';
 import { CategoryController } from './Category/CategoryController.js';
+import { SortController } from './Sort/SortController.js';
 
 export class Controllers {
   constructor() {
@@ -9,5 +10,6 @@ export class Controllers {
     this.product = new ProductController(this);
     this.search = new SearchController(this);
     this.category = new CategoryController(this);
+    this.sort = new SortController(this);
   }
 }

@@ -8,7 +8,7 @@ export class SearchController {
     this.view = new SearchView(this);
   }
 
-  getFindedObject(string) {
+  getFoundObject(string) {
     return this.model.getArrayOfObject(string);
   }
 

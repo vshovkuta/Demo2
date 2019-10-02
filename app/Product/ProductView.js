@@ -10,7 +10,7 @@ export class ProductView {
 
     arrayOfObject.forEach((item) => {
       let newDiv = document.createElement('div');
-      newDiv.setAttribute('class', 'col s12 m4');
+      newDiv.setAttribute('class', 'col s12 m4 l3 xl3');
       newDiv.innerHTML = `
         <div class="card sticky-action hoverable">
             <div class="card-image">
@@ -32,7 +32,7 @@ export class ProductView {
             </div>
             <div class="card-action flex-between">
               <span class="right">Price: <strong>$${item.price}</strong></span>
-             <span class=""><a class="btn truncate">
+             <span class="card-action-button"><a class="btn truncate">
                 <i class="material-icons left">add_shopping_cart</i>
                 BUY
               </a></span>

@@ -6,10 +6,10 @@ export class ProductController {
     this.controllers = controllers;
     this.model = new ProductModel(this);
     this.view = new ProductView(this);
-    this.view.render(this.controllers.warehouse.goods);
+    this.updateRender(this.controllers.warehouse.currentSet);
   }
 
-  updateRender(arrayOfObject) {
+  updateRender(arrayOfObject = this.controllers.warehouse.currentSet) {
     this.view.render(arrayOfObject);
   }
 
