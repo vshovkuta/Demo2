@@ -52,6 +52,10 @@
     text-shadow: gray 0 0 2px;
 }
 
+.flex {
+    display: flex;
+}
+
 .flex-wrap {
     display: flex;
     flex-flow: wrap;
