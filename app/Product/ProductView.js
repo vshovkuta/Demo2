@@ -54,7 +54,12 @@ export class ProductView {
           </div>`;
 
       this.root.append(newDiv);
-    })
+    });
+    this.addCardEvents();
+  }
+
+  addCardEvents() {
+    M.Materialbox.init(document.querySelectorAll('.materialboxed'), {});
   }
 
 
