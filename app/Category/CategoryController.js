@@ -1,5 +1,6 @@
 import { CategoryModel } from './CategoryModel.js';
 import { CategoryView } from './CategoryView.js';
+import { mediator } from '../main.js';
 
 export class CategoryController {
   constructor(mediator) {
@@ -10,18 +11,24 @@ export class CategoryController {
     this.renderCategory();
   }
 
-  // getCategories() {
-  //   return this.model.getUniqueCategories();
-  // }
-
   renderCategory() {
     this.view.render(this.model.getUniqueCategories());
   }
 
-
-  updateProducts(category) {
-    this.mediator.product.updateRender(this.model.getArrayOfProductsByCategory(category));
+  getGoods() {
+    return mediator.action('getGoods');
+  }
+  
+  getCurrentSet() {
+    return mediator.action('getCurrentSet');
   }
 
-//   setCallToCategory
+  setCurrentSet(arrayOfObject) {
+    return mediator.action('getCurrentSet', arrayOfObject);
+  }
+
+  updateProductsList(category) {
+    mediator.action('updateProductsList', this.model.getArrayOfProductsByCategory(category));
+  }
+
 }

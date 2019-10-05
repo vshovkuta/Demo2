@@ -47,7 +47,7 @@ export class CategoryView {
     let radioElem = [...UlRoot.getElementsByTagName('input')];
     radioElem.forEach((item) => {
       item.addEventListener('click', () => {
-        this.controller.updateProducts(item.value);
+        this.controller.updateProductsList(item.value);
       });
     });
 
