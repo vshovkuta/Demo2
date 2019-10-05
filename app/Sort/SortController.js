@@ -1,19 +1,16 @@
 import { SortModel } from './SortModel.js';
 import { SortView } from './SortView.js';
-import { mediator } from '../main.js';
 
 export class SortController {
-  constructor() {
+  constructor(mediator) {
+    this.mediator = mediator;
     this.model = new SortModel(this);
     this.view = new SortView(this);
-  }
-
-  getFoundObject(property, type) {
-    return this.model.getArrayOfObject(property, type);
+    
   }
 
   universalSort(element, property) {
-    this.view.render(this.getFoundObject(property, element.dataset.type));
+    this.view.render(this.model.getArrayOfObject(property, element.dataset.type));
     this.toggleDataType(element);
   }
 
@@ -28,11 +25,11 @@ export class SortController {
   }
 
   getCurrentSet() {
-    return mediator.action('getCurrentSet');
+    return this.mediator.action('getCurrentSet');
   }
 
   updateProductsList(arrayOfObject) {
-    mediator.action('updateProductsList', arrayOfObject);
+    this.mediator.action('updateProductsList', arrayOfObject);
   }
 
 

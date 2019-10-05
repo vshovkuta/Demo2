@@ -4,7 +4,7 @@ export class SearchModel {
   }
 
   getArrayOfObject(string) {
-    return this.controller.mediator.warehouse.currentSet.filter((item) => {
+    return this.controller.getCurrentSet().filter((item) => {
       return item.name.toLowerCase().includes(string)
     })
   }

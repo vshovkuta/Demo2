@@ -6,11 +6,14 @@ export class ProductController {
     this.mediator = mediator;
     this.model = new ProductModel(this);
     this.view = new ProductView(this);
-    this.updateRender(this.mediator.warehouse.currentSet);
+    this.updateRender(this.getCurrentSet());
   }
 
-  updateRender(arrayOfObject = this.mediator.warehouse.currentSet) {
+  updateRender(arrayOfObject = this.getCurrentSet()) {
     this.view.render(arrayOfObject);
   }
 
+  getCurrentSet() {
+    return this.mediator.action('getCurrentSet');
+  }
 }

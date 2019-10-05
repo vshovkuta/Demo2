@@ -16,4 +16,18 @@ export class SearchController {
     this.view.render();
   }
 
+  getImageURLObject() {
+    let data = {};
+    this.mediator.action('getCurrentSet').forEach((item) => data[item.name] = item.url);
+    return data;
+  }
+
+  getCurrentSet() {
+    return this.mediator.action('getCurrentSet');
+  }
+
+  updateProductsList(arrayOfObject) {
+    this.mediator.action('updateProductsList', arrayOfObject);
+  }
+
 }

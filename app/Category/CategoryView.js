@@ -51,7 +51,13 @@ export class CategoryView {
       });
     });
 
+    this.addCategoryEvents();
   }
+
+  addCategoryEvents() {
+    M.Collapsible.init(document.querySelectorAll('.collapsible'), { accordion: false });
+  }
+
 }
 
 

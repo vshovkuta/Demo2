@@ -10,7 +10,7 @@ export class Mediator {
     this.product = new ProductController(this);
     this.search = new SearchController(this);
     this.category = new CategoryController(this);
-    this.sort = new SortController();
+    this.sort = new SortController(this);
   }
 
   action(type, data) {

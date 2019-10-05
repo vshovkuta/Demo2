@@ -60,6 +60,7 @@ export class ProductView {
 
   addCardEvents() {
     M.Materialbox.init(document.querySelectorAll('.materialboxed'), {});
+    M.Tooltip.init(document.querySelectorAll('.tooltipped'), {});
   }
 
 
