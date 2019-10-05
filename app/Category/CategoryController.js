@@ -2,8 +2,8 @@ import { CategoryModel } from './CategoryModel.js';
 import { CategoryView } from './CategoryView.js';
 
 export class CategoryController {
-  constructor(controllers) {
-    this.controllers = controllers;
+  constructor(mediator) {
+    this.mediator = mediator;
     this.model = new CategoryModel(this);
     this.view = new CategoryView(this);
 
@@ -20,7 +20,7 @@ export class CategoryController {
 
 
   updateProducts(category) {
-    this.controllers.product.updateRender(this.model.getArrayOfProductsByCategory(category));
+    this.mediator.product.updateRender(this.model.getArrayOfProductsByCategory(category));
   }
 
 //   setCallToCategory

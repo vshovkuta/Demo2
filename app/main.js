@@ -1,3 +1,3 @@
-import { Controllers } from './Controllers.js';
+import { Mediator } from './Mediator.js';
 
-export const controllers = new Controllers();
+export const mediator = new Mediator();

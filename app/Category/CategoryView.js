@@ -5,6 +5,23 @@ export class CategoryView {
   }
 
   render(arrayOfCategory) {
+    let newUl = document.createElement('ul');
+    newUl.setAttribute('class', 'collapsible');
+    newUl.innerHTML = `
+        <li class="active">
+          <div class="collapsible-header">
+            <i class="material-icons">turned_in</i>
+            <span class="truncate">Category</span>
+          </div>
+          <div class="collapsible-body">
+            <form id="category-list" action="#">
+            </form>
+          </div>
+        </li>`;
+
+    this.root.append(newUl);
+    let UlRoot = this.root.getElementsByTagName('form')[0];
+
     let newP = document.createElement('p');
     newP.innerHTML = `
         <label>
@@ -12,7 +29,8 @@ export class CategoryView {
           <span class="truncate">ALL</span>
         </label>
       `;
-    this.root.append(newP);
+
+    UlRoot.append(newP);
 
     arrayOfCategory.forEach((item) => {
       let newP = document.createElement('p');
@@ -22,10 +40,11 @@ export class CategoryView {
           <span class="truncate">${item.toUpperCase()}</span>
         </label>
       `;
-      this.root.append(newP);
+
+      UlRoot.append(newP);
     });
 
-    let radioElem = [...this.root.getElementsByTagName('input')];
+    let radioElem = [...UlRoot.getElementsByTagName('input')];
     radioElem.forEach((item) => {
       item.addEventListener('click', () => {
         this.controller.updateProducts(item.value);
@@ -34,3 +53,5 @@ export class CategoryView {
 
   }
 }
+
+

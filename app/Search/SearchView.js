@@ -6,7 +6,7 @@ export class SearchView {
   }
 
   render() {
-    this.controller.controllers.product.updateRender(this.controller.getFoundObject(this.search.value.toLowerCase()));
+    this.controller.mediator.product.updateRender(this.controller.getFoundObject(this.search.value.toLowerCase()));
   }
 
 }

@@ -1,4 +1,4 @@
-import { controllers } from '../app/main.js';
+import { mediator } from '../app/main.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   let elems = document.querySelectorAll('.sidenav');
@@ -27,22 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   let data = {};
-  controllers.warehouse.goods.forEach((item) => data[item.name] = item.url);
+  mediator.warehouse.goods.forEach((item) => data[item.name] = item.url);
 
   let elems = document.querySelectorAll('.autocomplete');
   let instances = M.Autocomplete.init(elems, {
     data,
-    onAutocomplete: () => controllers.search.updateProducts(),
+    onAutocomplete: () => mediator.search.updateProducts(),
   });
 });
 
 document.addEventListener('click', function() {
   let data = {};
-  controllers.warehouse.currentSet.forEach((item) => data[item.name] = item.url);
+  mediator.warehouse.currentSet.forEach((item) => data[item.name] = item.url);
 
   let elems = document.querySelectorAll('.autocomplete');
   let instances = M.Autocomplete.init(elems, {
     data,
-    onAutocomplete: () => controllers.search.updateProducts(),
+    onAutocomplete: () => mediator.search.updateProducts(),
   });
 });

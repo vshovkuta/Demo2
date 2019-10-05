@@ -2,8 +2,8 @@ import { SearchModel } from './SearchModel.js';
 import { SearchView } from './SearchView.js';
 
 export class SearchController {
-  constructor(controllers) {
-    this.controllers = controllers;
+  constructor(mediator) {
+    this.mediator = mediator;
     this.model = new SearchModel(this);
     this.view = new SearchView(this);
   }
