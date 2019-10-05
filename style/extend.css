@@ -87,3 +87,7 @@
 .btn {
     user-select: none;
 }
+
+.row .col.l3, .row .col.m4, .row .col.s12 {
+    margin-left: 0;
+}

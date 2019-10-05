@@ -34,11 +34,12 @@ export class SearchView {
     });
 
     this.root.addEventListener('click', () => {
-      this.controller.updateProductsList(this.controller.getFoundObject(''));
       M.Autocomplete.init(document.querySelectorAll('.autocomplete'),
         {
           data: this.controller.getImageURLObject(),
-          onAutocomplete: () => this.controller.getFoundObject(this.rootInput.value.toLowerCase()),
+          onAutocomplete: () => {
+            this.controller.updateProductsList(this.controller.getFoundObject(this.rootInput.value.toLowerCase()));
+          },
         });
     });
 

@@ -9,8 +9,3 @@ document.addEventListener('DOMContentLoaded', function() {
   let elems = document.querySelectorAll('.dropdown-trigger');
   let instances = M.Dropdown.init(elems, {});
 });
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   let elems = document.querySelectorAll('.collapsible');
-//   let instances = M.Collapsible.init(elems, { accordion: false });
-// });
