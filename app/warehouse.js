@@ -2,6 +2,16 @@ export class Warehouse {
   constructor() {
     this.goods;
     this.currentSet;
+    this.ordersHistory;
+    this.currentOrder;
+    this.commonProperties = ['type', 'price', 'quantity', 'ageMonth', 'weightKg', 'color', 'gender', 'lifetimeYears', 'rapacity'];
+    this.uniqueProperties = {
+      cat: ['fur', 'shortLegged', 'pedigree', 'trimming', 'lopiness'],
+      dog: ['fur', 'shortLegged', 'pedigree', 'trimming', 'specialization'],
+      fish: ['freshwater', 'zonality'],
+      bird: ['flying', 'talking', 'singing']
+    };
+
     this.getLocaleStorage();
   }
 

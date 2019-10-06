@@ -1,5 +1,5 @@
-import { SearchModel } from './SearchModel.js';
-import { SearchView } from './SearchView.js';
+import { SearchModel } from './searchModel.js';
+import { SearchView } from './searchView.js';
 
 export class SearchController {
   constructor(mediator) {

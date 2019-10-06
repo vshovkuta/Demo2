@@ -1,3 +1,3 @@
-import { Mediator } from './Mediator.js';
+import { Mediator } from './mediator.js';
 
 export const mediator = new Mediator();

@@ -1,8 +1,9 @@
-import { Warehouse } from '../app/Warehouse.js';
-import { ProductController } from './Product/ProductController.js';
-import { SearchController} from './Search/SearchController.js';
-import { CategoryController } from './Category/CategoryController.js';
-import { SortController } from './Sort/SortController.js';
+import { Warehouse } from './warehouse.js';
+import { ProductController } from './Product/productController.js';
+import { SearchController} from './Search/searchController.js';
+import { CategoryController } from './Category/categoryController.js';
+import { SortController } from './Sort/sortController.js';
+import {CartController} from './Cart/cartController.js';
 
 export class Mediator {
   constructor() {
@@ -11,6 +12,7 @@ export class Mediator {
     this.search = new SearchController(this);
     this.category = new CategoryController(this);
     this.sort = new SortController(this);
+    this.cart = new CartController(this);
   }
 
   action(type, data) {
@@ -26,6 +28,14 @@ export class Mediator {
 
       case 'setCurrentSet': {
         return this.warehouse.currentSet = data;
+      }
+
+      case 'getCommonProperties': {
+        return this.warehouse.commonProperties;
+      }
+
+      case 'getUniqueProperties': {
+        return this.warehouse.uniqueProperties;
       }
 
       case 'updateProductsList': {

@@ -25,7 +25,7 @@
         <li id="search-root">
 
         </li>
-        <li>
+        <li id="language-root">
           <a class="dropdown-trigger" href="#!" data-target="dropdownLanguage">Language
             <i class="material-icons right">arrow_drop_down</i>
             <i class="material-icons left">public</i></a>
@@ -42,11 +42,8 @@
           </li>
         </ul>
         </li>
-        <li>
-          <a href="#!">
-            <i class="material-icons left">shopping_cart</i>
-            Cart
-          </a>
+        <li id="cart-root">
+          <!--CART ICON-->
         </li>
       </ul>
     </div>
@@ -266,24 +263,26 @@
      <div class="row">
        <div class="col">
         <!--SORT-->
-        <div class="margin">
-          <a class="btn" id="sort-by-price" data-property="price" data-type="asc">
-            <i class="material-icons left">arrow_upward</i>
-            PRICE
-          </a>
-          <a class="btn" id="sort-by-quantity" data-property="quantity" data-type="asc">
-            <i class="material-icons left">arrow_upward</i>
-            QUANTITY
-          </a>
-          <a class="btn" id="sort-by-name" data-property="name" data-type="asc">
-            <i class="material-icons left">arrow_upward</i>
-            NAME
-          </a>
-          <a class="btn" id="sort-reset">
-            <i class="material-icons left">block</i>
-            RESET
-          </a>
-        </div>
+         <div class="margin">
+           <div id="sort-root">
+             <a class="btn" id="sort-by-price" data-property="price" data-type="asc">
+               <i class="material-icons left">arrow_upward</i>
+               PRICE
+             </a>
+             <a class="btn" id="sort-by-quantity" data-property="quantity" data-type="asc">
+               <i class="material-icons left">arrow_upward</i>
+               QUANTITY
+             </a>
+             <a class="btn" id="sort-by-name" data-property="name" data-type="asc">
+               <i class="material-icons left">arrow_upward</i>
+               NAME
+             </a>
+             <a class="btn" id="sort-reset">
+               <i class="material-icons left">block</i>
+               RESET
+             </a>
+           </div>
+         </div>
        </div>
      </div>
      <div class="row">
@@ -294,6 +293,11 @@
 
     </div>
   </div>
+</div>
+
+
+<div id="modal1" class="modal modal-fixed-footer open" tabindex="0">
+  <!--MODAL FOR CART-->
 </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
-import { CategoryModel } from './CategoryModel.js';
-import { CategoryView } from './CategoryView.js';
+import { CategoryModel } from './categoryModel.js';
+import { CategoryView } from './categoryView.js';
 
 export class CategoryController {
   constructor(mediator) {

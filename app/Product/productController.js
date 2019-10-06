@@ -1,5 +1,5 @@
-import { ProductModel } from './ProductModel.js';
-import { ProductView } from './ProductView.js';
+import { ProductModel } from './productModel.js';
+import { ProductView } from './productView.js';
 
 export class ProductController {
   constructor(mediator) {

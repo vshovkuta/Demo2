@@ -1,6 +1,7 @@
 export class SortView {
   constructor(controller) {
     this.controller = controller;
+    this.root = document.getElementById('sort-root');
     this.sortByPriceButton = document.getElementById('sort-by-price');
     this.sortByQuantityButton = document.getElementById('sort-by-quantity');
     this.sortByNameButton = document.getElementById('sort-by-name');
@@ -24,7 +25,11 @@ export class SortView {
 
   }
 
-  render(arrayOfObject) {
+  // render() {
+  //   let new
+  // }
+
+  renderSorted(arrayOfObject) {
     this.controller.updateProductsList(arrayOfObject);
   }
 

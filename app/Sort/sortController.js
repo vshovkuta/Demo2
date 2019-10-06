@@ -1,5 +1,5 @@
-import { SortModel } from './SortModel.js';
-import { SortView } from './SortView.js';
+import { SortModel } from './sortModel.js';
+import { SortView } from './sortView.js';
 
 export class SortController {
   constructor(mediator) {
@@ -10,7 +10,7 @@ export class SortController {
   }
 
   universalSort(element, property) {
-    this.view.render(this.model.getArrayOfObject(property, element.dataset.type));
+    this.view.renderSorted(this.model.getArrayOfObject(property, element.dataset.type));
     this.toggleDataType(element);
   }
 
