@@ -4,7 +4,27 @@ export class Warehouse {
     this.currentSet;
     this.ordersHistory;
     this.currentOrder;
-    this.commonProperties = ['type', 'price', 'quantity', 'ageMonth', 'weightKg', 'color', 'gender', 'lifetimeYears', 'rapacity'];
+    this.commonProperties = ['type', 'quantity', 'ageMonth', 'weightKg', 'gender', 'lifetimeYears', 'rapacity'];
+    this.PropertyNames = new Map([
+      ['type', 'Category'],
+      ['quantity', 'Quantity'],
+      ['ageMonth', 'Age (month)'],
+      ['weightKg', 'Weight (kg.)'],
+      ['gender', 'Gender'],
+      ['lifetimeYears', 'Lifetime (yr.)'],
+      ['rapacity', 'Rapacity'],
+      ['fur', 'Fur'],
+      ['shortLegged', 'Short legged'],
+      ['pedigree', 'Pedigree'],
+      ['trimming', 'Trimming'],
+      ['lopiness', 'Lopiness'],
+      ['specialization', 'Specialization'],
+      ['freshwater', 'Freshwater'],
+      ['zonality', 'Zonality'],
+      ['flying', 'Flying'],
+      ['talking', 'Talking'],
+      ['singing', 'Singing'],
+    ]);
     this.uniqueProperties = {
       cat: ['fur', 'shortLegged', 'pedigree', 'trimming', 'lopiness'],
       dog: ['fur', 'shortLegged', 'pedigree', 'trimming', 'specialization'],

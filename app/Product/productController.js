@@ -13,7 +13,25 @@ export class ProductController {
     this.view.render(arrayOfObject);
   }
 
+  PropertyNames(name) {
+    return this.mediator.action('PropertyNames', name);
+  }
+
+  getCommonProperties() {
+    return this.mediator.action('getCommonProperties');
+  }
+
+  getUniqueProperties() {
+    return this.mediator.action('getUniqueProperties');
+  }
+
   getCurrentSet() {
     return this.mediator.action('getCurrentSet');
   }
+
+
+
+
 }
+
+
