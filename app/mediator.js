@@ -55,10 +55,10 @@ export class Mediator {
       case 'updateCartNumber': {
         this.cart.updateCartNumber(data);
       }
-
-      case 'addToCurrentOrder': {
-        this.warehouse.currentOrder[data[0]] = data[1];
-      }
+      //
+      // case 'addToCurrentOrder': {
+      //   this.warehouse.currentOrder[data[0]] = data[1];
+      // }
 
     }
   }

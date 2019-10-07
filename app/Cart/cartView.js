@@ -1,6 +1,5 @@
 export class CartView {
   constructor(controller) {
-    this.cartNumber;
     this.cartNumberElem;
     this.controller = controller;
     this.root = document.getElementById('cart-root');
@@ -49,7 +48,7 @@ export class CartView {
   }
 
   upCartNumber() {
-    let innerNumber = parseFloat(this.cartNumberElem.innerHTML);
+    let innerNumber = parseInt(this.cartNumberElem.dataset.count);
     if (innerNumber < 9) {
       this.removeClass(this.cartNumberElem, 'hidden');
       this.cartNumberElem.innerHTML = innerNumber + 1;
@@ -62,7 +61,7 @@ export class CartView {
   }
 
   downCartNumber() {
-    let innerNumber = parseFloat(this.cartNumberElem.dataset.count);
+    let innerNumber = parseInt(this.cartNumberElem.dataset.count);
     if (innerNumber > 1 && innerNumber <= 9) {
       this.removeClass(this.cartNumberElem, 'hidden');
       this.cartNumberElem.innerHTML = innerNumber - 1;
@@ -88,14 +87,27 @@ export class CartView {
 
   updateCartNumber(string = 'up') {
     if(typeof string === 'number') {
-      this.removeClass(this.cartNumberElem, 'hidden');
-      this.cartNumberElem.innerHTML = string;
-      this.cartNumberElem.dataset.count = string;
+      let number = parseInt(string, 10);
+      if (number == 0) {
+        this.addClass(this.cartNumberElem, 'hidden');
+        this.cartNumberElem.innerHTML = 0;
+        this.cartNumberElem.dataset.count = 0;
+      }
+      if (number > 0 && number <= 9) {
+        this.removeClass(this.cartNumberElem, 'hidden');
+        this.cartNumberElem.innerHTML = number;
+        this.cartNumberElem.dataset.count = number;
+      }
+      if (number > 9) {
+        this.removeClass(this.cartNumberElem, 'hidden');
+        this.cartNumberElem.innerHTML = '9+';
+        this.cartNumberElem.dataset.count = number;
+      }
     }
-
     if (string === 'up') {
       this.upCartNumber();
-    } else {
+    }
+    if (string === 'down') {
       this.downCartNumber();
     }
   }

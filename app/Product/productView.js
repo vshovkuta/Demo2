@@ -48,6 +48,7 @@ export class ProductView {
       this.root.append(newDiv);
     });
     this.addCardEvents();
+    this.restoreLastOrder();
   }
 
   getHTMLStringFromColor(object) {
@@ -115,10 +116,12 @@ export class ProductView {
     let currentOrder = JSON.parse(localStorage.getItem('currentOrder')) || [];
     currentOrder.forEach((item) => {
       let currentElem = document.querySelector(`[data-id="${item[0]}"]`);
-      currentElem.classList.add('disabled');
-      currentElem.innerHTML = `<i class="material-icons left">shopping_cart</i>ADDED`;
-      this.controller.updateCartNumber('up');
-    })
+      if (currentElem) {
+        currentElem.classList.add('disabled');
+        currentElem.innerHTML = `<i class="material-icons left">shopping_cart</i>ADDED`;
+      }
+    });
+    this.controller.updateCartNumber(currentOrder.length);
   }
 
   updateCartNumber(number) {

@@ -8,7 +8,6 @@ export class ProductController {
     this.view = new ProductView(this);
 
     this.updateRender(this.getCurrentSet());
-    this.restoreLastOrder();
   }
 
   updateRender(arrayOfObject = this.getCurrentSet()) {
