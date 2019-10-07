@@ -4,14 +4,14 @@ import { CategoryView } from './categoryView.js';
 export class CategoryController {
   constructor(mediator) {
     this.mediator = mediator;
-    this.model = new CategoryModel(this);
-    this.view = new CategoryView(this);
+    this.model = new CategoryModel();
+    this.view = new CategoryView();
 
     this.renderCategory();
   }
 
   renderCategory() {
-    this.view.render(this.model.getUniqueCategories());
+    this.view.render(this.model.getUniqueCategories(this.getGoods.bind(this)), this.updateProductsList.bind(this));
   }
 
   getGoods() {
@@ -27,7 +27,7 @@ export class CategoryController {
   }
 
   updateProductsList(category) {
-    this.mediator.action('updateProductsList', this.model.getArrayOfProductsByCategory(category));
+    this.mediator.action('updateProductsList', this.model.getArrayOfProductsByCategory(category, this.setCurrentSet.bind(this), this.getGoods.bind(this)));
   }
 
 }

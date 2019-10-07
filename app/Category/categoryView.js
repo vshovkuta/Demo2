@@ -1,10 +1,9 @@
 export class CategoryView {
-  constructor(controller) {
-    this.controller = controller;
+  constructor() {
     this.root = document.getElementById('category-root');
   }
 
-  render(arrayOfCategory) {
+  render(arrayOfCategory, updateProductsList) {
     let newUl = document.createElement('ul');
     newUl.setAttribute('class', 'collapsible');
     newUl.innerHTML = `
@@ -47,7 +46,7 @@ export class CategoryView {
     let radioElem = [...UlRoot.getElementsByTagName('input')];
     radioElem.forEach((item) => {
       item.addEventListener('click', () => {
-        this.controller.updateProductsList(item.value);
+        updateProductsList(item.value);
       });
     });
 

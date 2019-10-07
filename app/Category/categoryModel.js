@@ -1,11 +1,10 @@
 export class CategoryModel {
-  constructor(controller) {
-    this.controller = controller;
+  constructor() {
   }
 
-  getUniqueCategories() {
+  getUniqueCategories(getGoods) {
     let uniqueCategory = new Set();
-    this.controller.mediator.warehouse.goods.forEach((item) => {
+    getGoods().forEach((item) => {
       uniqueCategory.add(item.type);
     });
 
@@ -13,12 +12,12 @@ export class CategoryModel {
   }
 
 
-  getArrayOfProductsByCategory(category) {
+  getArrayOfProductsByCategory(category, setCurrentSet, getGoods) {
     if(category === 'all') {
-      return this.controller.mediator.warehouse.currentSet = this.controller.mediator.warehouse.goods;
+      return setCurrentSet(getGoods());
     }
 
-    return this.controller.mediator.warehouse.currentSet = this.controller.mediator.warehouse.goods.filter((item) => {
+    return setCurrentSet(getGoods()).filter((item) => {
       return item.type.toLowerCase() === category.toLowerCase();
     })
   }

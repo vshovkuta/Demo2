@@ -4,8 +4,8 @@ import { SearchView } from './searchView.js';
 export class SearchController {
   constructor(mediator) {
     this.mediator = mediator;
-    this.model = new SearchModel(this);
-    this.view = new SearchView(this);
+    this.model = new SearchModel();
+    this.view = new SearchView();
   }
 
   getFoundObject(string) {
