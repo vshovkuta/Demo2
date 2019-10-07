@@ -1,7 +1,6 @@
 export class CartView {
-  constructor(controller) {
+  constructor() {
     this.cartNumberElem;
-    this.controller = controller;
     this.root = document.getElementById('cart-root');
 
     this.render();
