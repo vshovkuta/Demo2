@@ -1,5 +1,7 @@
 export class CartView {
   constructor(controller) {
+    this.cartNumber;
+    this.cartNumberElem;
     this.controller = controller;
     this.root = document.getElementById('cart-root');
 
@@ -13,10 +15,13 @@ export class CartView {
     newLi.innerHTML = `<a class="modal-trigger" href="#cart-modal">
           <i class="material-icons left">shopping_cart</i>
             Cart
+            <div id="cart-number" class="hidden">0</div>
           </a>
     `;
 
     this.root.append(newLi);
+    this.cartNumberElem = document.getElementById('cart-number');
+
   }
 
   renderModal() {
@@ -42,5 +47,74 @@ export class CartView {
   addCartEvents() {
     M.Modal.init(document.querySelectorAll('.modal'), {});
   }
+
+  upCartNumber() {
+    let innerNumber = parseFloat(this.cartNumberElem.innerHTML);
+    if (innerNumber < 9) {
+      this.removeClass(this.cartNumberElem, 'hidden');
+      this.cartNumberElem.innerHTML = innerNumber + 1;
+      this.cartNumberElem.dataset.count = innerNumber + 1;
+    } else {
+      this.removeClass(this.cartNumberElem, 'hidden');
+      this.cartNumberElem.innerHTML = '9+';
+      this.cartNumberElem.dataset.count = innerNumber + 1;
+    }
+  }
+
+  downCartNumber() {
+    let innerNumber = parseFloat(this.cartNumberElem.dataset.count);
+    if (innerNumber > 1 && innerNumber <= 9) {
+      this.removeClass(this.cartNumberElem, 'hidden');
+      this.cartNumberElem.innerHTML = innerNumber - 1;
+      this.cartNumberElem.dataset.count = innerNumber - 1;
+    }
+    if (innerNumber > 9 ) {
+      this.removeClass(this.cartNumberElem, 'hidden');
+      this.cartNumberElem.innerHTML = '9+';
+      this.cartNumberElem.dataset.count = innerNumber - 1;
+    }
+    if (innerNumber === 1) {
+      this.addClass(this.cartNumberElem, 'hidden');
+      this.cartNumberElem.innerHTML = innerNumber - 1;
+      this.cartNumberElem.dataset.count = innerNumber - 1;
+    }
+  }
+    // if (innerNumber = 0) {
+    //   this.addClass(this.cartNumberElem, 'hidden');
+    //   this.cartNumberElem.innerText = innerNumber + 1;
+    // }
+
+
+
+  updateCartNumber(string = 'up') {
+    if(typeof string === 'number') {
+      this.removeClass(this.cartNumberElem, 'hidden');
+      this.cartNumberElem.innerHTML = string;
+      this.cartNumberElem.dataset.count = string;
+    }
+
+    if (string === 'up') {
+      this.upCartNumber();
+    } else {
+      this.downCartNumber();
+    }
+  }
+
+  toggleClass(element, className) {
+    element.classList.toggle(className);
+  }
+
+  addClass(element, className) {
+      if (!element.classList.contains(className)) {
+        element.classList.add(className);
+      }
+  }
+
+  removeClass(element, className) {
+    if (element.classList.contains(className)) {
+      element.classList.remove(className);
+    }
+  }
+
 
 }

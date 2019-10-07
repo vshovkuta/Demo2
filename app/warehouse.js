@@ -1,9 +1,10 @@
 export class Warehouse {
-  constructor() {
+  constructor(mediator) {
     this.goods;
     this.currentSet;
     this.ordersHistory;
-    this.currentOrder;
+    this.currentOrder = {};
+    this.mediator = mediator;
     this.commonProperties = ['type', 'quantity', 'ageMonth', 'weightKg', 'gender', 'lifetimeYears', 'rapacity'];
     this.PropertyNames = new Map([
       ['type', 'Category'],
@@ -32,20 +33,21 @@ export class Warehouse {
       bird: ['flying', 'talking', 'singing']
     };
 
-    this.getLocaleStorage();
+    this.getGoodsList();
   }
 
-  setLocaleStorage(arrayOfObject) {
-    localStorage.setItem('goods', JSON.stringify(arrayOfObject));
+  setLocaleStorage(key, arrayOfObject) {
+    localStorage.setItem(key, JSON.stringify(arrayOfObject));
   }
 
-  async getLocaleStorage() {
+  async getGoodsList() {
     if (localStorage.getItem('goods')) {
       this.currentSet = this.goods = JSON.parse(localStorage.getItem('goods'));
     } else {
       await fetch('./goods.json').then((result) => result.json())
                                  .then((result) => this.currentSet = this.goods = result)
-                                 .then((result) => this.setLocaleStorage(result));
+                                 .then((result) => this.setLocaleStorage('goods', result))
+                                 .then(() => window.location.reload());
     }
   }
 }

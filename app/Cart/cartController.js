@@ -9,4 +9,7 @@ export class CartController {
 
   }
 
+  updateCartNumber(string) {
+    this.view.updateCartNumber(string);
+  }
 }

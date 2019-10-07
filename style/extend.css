@@ -91,3 +91,26 @@
 .row .col.l3, .row .col.m4, .row .col.s12 {
     margin-left: 0;
 }
+
+#cart-root {
+    position: relative;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#cart-number {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 0;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    height: 15px;
+    font-size: 11px;
+    width: 15px;
+    text-align: center;
+    line-height: 1.3em;
+}

@@ -6,7 +6,9 @@ export class ProductController {
     this.mediator = mediator;
     this.model = new ProductModel(this);
     this.view = new ProductView(this);
+
     this.updateRender(this.getCurrentSet());
+    this.restoreLastOrder();
   }
 
   updateRender(arrayOfObject = this.getCurrentSet()) {
@@ -29,7 +31,17 @@ export class ProductController {
     return this.mediator.action('getCurrentSet');
   }
 
+  getCurrentOrder() {
+    return this.model.getCurrentOrder();
+  }
 
+  restoreLastOrder() {
+    this.view.restoreLastOrder();
+  }
+
+  updateCartNumber(string) {
+    this.mediator.action('updateCartNumber', string);
+  }
 
 
 }
