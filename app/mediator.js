@@ -8,11 +8,12 @@ import { CartController } from './Cart/cartController.js';
 export class Mediator {
   constructor() {
     this.warehouse = new Warehouse(this);
+    this.cart = new CartController(this);
+    this.product = new ProductController(this);
     this.search = new SearchController(this);
     this.category = new CategoryController(this);
     this.sort = new SortController(this);
-    this.cart = new CartController(this);
-    this.product = new ProductController(this);
+
   }
 
   action(type, data) {

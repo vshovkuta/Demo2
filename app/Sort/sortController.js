@@ -6,11 +6,12 @@ export class SortController {
     this.mediator = mediator;
     this.model = new SortModel(this);
     this.view = new SortView(this);
-    
+
+    this.addListenerToView();
   }
 
   universalSort(element, property) {
-    this.view.renderSorted(this.model.getArrayOfObject(property, element.dataset.type));
+    this.renderSorted(this.model.getArrayOfObject(property, element.dataset.type, this.getCurrentSet.bind(this)));
     this.toggleDataType(element);
   }
 
@@ -32,5 +33,12 @@ export class SortController {
     this.mediator.action('updateProductsList', arrayOfObject);
   }
 
+  addListenerToView() {
+    this.view.addSortEvents(this.universalSort.bind(this), this.updateProductsList.bind(this));
+  }
+
+  renderSorted(arrayOfObject) {
+    this.updateProductsList(arrayOfObject);
+  }
 
 }
