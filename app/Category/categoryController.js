@@ -5,7 +5,7 @@ export class CategoryController {
   constructor(mediator) {
     this.mediator = mediator;
     this.model = new CategoryModel();
-    this.view = new CategoryView(this);
+    this.view = new CategoryView();
 
     this.renderCategory();
   }
