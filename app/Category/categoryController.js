@@ -27,7 +27,7 @@ export class CategoryController {
   }
 
   getArrayOfProductsByCategory(category) {
-    return this.model.getArrayOfProductsByCategory(category, this.setCurrentSet.bind(this), this.getGoods.bind(this))
+    return this.model.getArrayOfProductsByCategory(category, this.setCurrentSet.bind(this), this.getGoods.bind(this));
   }
 
   updateProductsList(category) {
