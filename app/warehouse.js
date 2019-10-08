@@ -6,7 +6,7 @@ export class Warehouse {
     this.currentOrder = {};
     this.mediator = mediator;
     this.commonProperties = ['type', 'quantity', 'ageMonth', 'weightKg', 'gender', 'lifetimeYears', 'rapacity'];
-    this.PropertyNames = new Map([
+    this.propertyNames = new Map([
       ['type', 'Category'],
       ['quantity', 'Quantity'],
       ['ageMonth', 'Age (month)'],

@@ -16,7 +16,7 @@ export class ProductController {
   }
 
   getPropertyNames(name) {
-    return this.mediator.action('PropertyNames', name);
+    return this.mediator.action('propertyNames', name);
   }
 
   getCommonProperties() {

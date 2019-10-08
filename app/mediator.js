@@ -35,8 +35,8 @@ export class Mediator {
         return this.warehouse.commonProperties;
       }
 
-      case 'PropertyNames': {
-        return this.warehouse.PropertyNames.get(data);
+      case 'propertyNames': {
+        return this.warehouse.propertyNames.get(data);
       }
 
       case 'getUniqueProperties': {
