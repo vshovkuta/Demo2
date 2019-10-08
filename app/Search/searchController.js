@@ -6,14 +6,16 @@ export class SearchController {
     this.mediator = mediator;
     this.model = new SearchModel();
     this.view = new SearchView();
+
+    this.updateProducts();
   }
 
   getFoundObject(string) {
-    return this.model.getArrayOfObject(string);
+    return this.model.getArrayOfObject(string, this.getCurrentSet.bind(this));
   }
 
   updateProducts() {
-    this.view.render();
+    this.view.render(this.updateProductsList.bind(this), this.getFoundObject.bind(this), this.getImageURLObject.bind(this));
   }
 
   getImageURLObject() {
@@ -30,4 +32,7 @@ export class SearchController {
     this.mediator.action('updateProductsList', arrayOfObject);
   }
 
+  addSearchEvents() {
+    this.view.addSearchEvents(this.updateProductsList.bind(this), this.getFoundObject.bind(this), this.getImageURLObject.bind(this))
+  }
 }

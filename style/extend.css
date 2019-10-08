@@ -114,3 +114,18 @@
     text-align: center;
     line-height: 1.3em;
 }
+
+.input-field input[type=search]:focus:not(.browser-default), .input-field input[type=search]:not(.browser-default) {
+    background-color: black;
+    color: white;
+}
+
+.input-field input[type=search] ~ label[for="search"] {
+    top: -8px;
+    left: 16px;
+}
+
+.input-field input[type=search] > label[for="search"] {
+    top: 0px;
+    left: 0px;
+}

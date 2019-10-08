@@ -3,8 +3,8 @@ export class SearchModel {
    this.controller = controller;
   }
 
-  getArrayOfObject(string) {
-    return this.controller.getCurrentSet().filter((item) => {
+  getArrayOfObject(string, getCurrentSet) {
+    return getCurrentSet().filter((item) => {
       return item.name.toLowerCase().includes(string)
     })
   }

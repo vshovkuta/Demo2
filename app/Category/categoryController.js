@@ -5,7 +5,7 @@ export class CategoryController {
   constructor(mediator) {
     this.mediator = mediator;
     this.model = new CategoryModel();
-    this.view = new CategoryView();
+    this.view = new CategoryView(this);
 
     this.renderCategory();
   }
@@ -23,11 +23,15 @@ export class CategoryController {
   }
 
   setCurrentSet(arrayOfObject) {
-    return this.mediator.action('getCurrentSet', arrayOfObject);
+    return this.mediator.action('setCurrentSet', arrayOfObject);
+  }
+
+  getArrayOfProductsByCategory(category) {
+    return this.model.getArrayOfProductsByCategory(category, this.setCurrentSet.bind(this), this.getGoods.bind(this))
   }
 
   updateProductsList(category) {
-    this.mediator.action('updateProductsList', this.model.getArrayOfProductsByCategory(category, this.setCurrentSet.bind(this), this.getGoods.bind(this)));
+    this.mediator.action('updateProductsList', this.getArrayOfProductsByCategory(category));
   }
 
 }

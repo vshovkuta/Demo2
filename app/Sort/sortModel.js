@@ -2,8 +2,8 @@ export class SortModel {
   constructor() {
   }
 
-  getArrayOfObject(property, sortType = 'asc', callback) {
-    return callback().slice().sort((a, b) => {
+  getArrayOfObject(property, sortType = 'asc', getCurrentSet) {
+    return getCurrentSet().slice().sort((a, b) => {
       if (typeof a[property] === 'number' && typeof b[property] === 'number') {
         if (sortType === 'asc') {
           return a[property] - b[property];

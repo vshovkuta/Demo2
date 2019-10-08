@@ -17,9 +17,9 @@ export class CategoryModel {
       return setCurrentSet(getGoods());
     }
 
-    return setCurrentSet(getGoods()).filter((item) => {
+    return setCurrentSet(getGoods().filter((item) => {
       return item.type.toLowerCase() === category.toLowerCase();
-    })
+    }));
   }
 
 }

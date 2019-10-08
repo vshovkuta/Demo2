@@ -3,10 +3,9 @@ export class SearchView {
     this.controller = controller;
     this.root = document.getElementById('search-root');
 
-    this.render();
   }
 
-  render() {
+  render(updateProductsList, getFoundObject, getImageURLObject) {
     let liElem = document.createElement('li');
     liElem.innerHTML = `<nav class="z-depth-0 transparent ">
             <div class="nav-wrapper left">
@@ -22,30 +21,30 @@ export class SearchView {
     `;
 
     this.root.append(liElem);
-    this.addSearchEvents();
+    this.addSearchEvents(updateProductsList, getFoundObject, getImageURLObject);
   }
 
-  addSearchEvents() {
+  addSearchEvents(updateProductsList, getFoundObject, getImageURLObject) {
     this.rootInput = document.getElementById('search-input');
     this.rootClear = document.getElementById('search-clear');
 
     this.root.addEventListener('keyup', () => {
-      this.controller.updateProductsList(this.controller.getFoundObject(this.rootInput.value.toLowerCase()));
+      updateProductsList(getFoundObject(this.rootInput.value.toLowerCase()));
     });
 
     this.root.addEventListener('click', () => {
       M.Autocomplete.init(document.querySelectorAll('.autocomplete'),
         {
-          data: this.controller.getImageURLObject(),
+          data: getImageURLObject(),
           onAutocomplete: () => {
-            this.controller.updateProductsList(this.controller.getFoundObject(this.rootInput.value.toLowerCase()));
+            updateProductsList(getFoundObject(this.rootInput.value.toLowerCase()));
           },
         });
     });
 
     this.rootClear.addEventListener('click', () => {
       this.rootInput.value = '';
-      this.controller.updateProductsList(this.controller.getFoundObject(this.rootInput.value.toLowerCase()));
+      updateProductsList(getFoundObject(this.rootInput.value.toLowerCase()));
     })
 
   }
