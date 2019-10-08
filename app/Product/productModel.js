@@ -1,6 +1,5 @@
 export class ProductModel {
-  constructor(controller) {
-   this.controller = controller;
+  constructor() {
   }
 
   getCurrentOrder() {

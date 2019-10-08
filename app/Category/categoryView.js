@@ -1,6 +1,5 @@
 export class CategoryView {
-  constructor(a) {
-    this.a = a;
+  constructor() {
     this.root = document.getElementById('category-root');
   }
 
@@ -48,7 +47,6 @@ export class CategoryView {
     radioElem.forEach((item) => {
       item.addEventListener('click', () => {
         updateProductsList(item.value);
-        console.log(this.a.mediator.warehouse.currentSet);
       });
     });
 

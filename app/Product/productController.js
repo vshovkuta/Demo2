@@ -4,17 +4,18 @@ import { ProductView } from './productView.js';
 export class ProductController {
   constructor(mediator) {
     this.mediator = mediator;
-    this.model = new ProductModel(this);
+    this.model = new ProductModel();
     this.view = new ProductView(this);
 
     this.updateRender(this.getCurrentSet());
   }
 
   updateRender(arrayOfObject = this.getCurrentSet()) {
-    this.view.render(arrayOfObject);
+    this.view.render(arrayOfObject, this.getCommonProperties.bind(this), this.getUniqueProperties.bind(this), this.getPropertyNames.bind(this));
+    this.restoreLastOrder();
   }
 
-  PropertyNames(name) {
+  getPropertyNames(name) {
     return this.mediator.action('PropertyNames', name);
   }
 

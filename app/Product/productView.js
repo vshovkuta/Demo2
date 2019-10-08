@@ -5,7 +5,7 @@ export class ProductView {
 
   }
 
-  render(arrayOfObject) {
+  render(arrayOfObject, getCommonProperties, getUniqueProperties, getPropertyNames) {
     this.root.innerHTML = '';
 
     arrayOfObject.forEach((item) => {
@@ -21,7 +21,7 @@ export class ProductView {
             <i class="material-icons right tooltipped" data-position="top" data-tooltip="More details">
               expand_less</i>
           </span>
-          ${this.getHTMLStringFromCommonProperties(item)}
+          ${this.getHTMLStringFromCommonProperties(item, getCommonProperties, getPropertyNames)}
           ${this.getHTMLStringFromColor(item)}
         </div>
         <div class="card-action flex-between">
@@ -41,7 +41,7 @@ export class ProductView {
             ${item.name}
             <i class="material-icons right">close</i>
           </span>
-          ${this.getHTMLStringFromUniqueProperties(item)}
+          ${this.getHTMLStringFromUniqueProperties(item, getUniqueProperties, getPropertyNames)}
         </div>
       </div>`;
 
@@ -64,23 +64,23 @@ export class ProductView {
     return `<p><strong>Color:</strong> ${formattedHTMLString}</p>`;
   }
 
-  getHTMLStringFromCommonProperties(object) {
-    let commonProperties = this.controller.getCommonProperties();
+  getHTMLStringFromCommonProperties(object, getCommonProperties, getPropertyNames) {
+    let commonProperties = getCommonProperties();
     let formattedHTMLString = '';
     for (let item in object) {
       if (commonProperties.includes(item)) {
-        formattedHTMLString += `<p><strong>${this.controller.PropertyNames(item)}:</strong> ${object[item]}</p>\r\n`;
+        formattedHTMLString += `<p><strong>${getPropertyNames(item)}:</strong> ${object[item]}</p>\r\n`;
       }
     }
     return formattedHTMLString;
   }
 
-  getHTMLStringFromUniqueProperties(object) {
-    let uniqueProperties = this.controller.getUniqueProperties();
+  getHTMLStringFromUniqueProperties(object, getUniqueProperties, getPropertyNames) {
+    let uniqueProperties = getUniqueProperties();
     let formattedHTMLString = '';
     for (let item in object) {
       if (uniqueProperties[object.type].includes(item)) {
-        formattedHTMLString += `<p><strong>${this.controller.PropertyNames(item)}:</strong> ${object[item]}</p>\r\n`;
+        formattedHTMLString += `<p><strong>${getPropertyNames(item)}:</strong> ${object[item]}</p>\r\n`;
       }
     }
     return formattedHTMLString;
@@ -121,7 +121,7 @@ export class ProductView {
         currentElem.innerHTML = `<i class="material-icons left">shopping_cart</i>ADDED`;
       }
     });
-    this.controller.updateCartNumber(currentOrder.length);
+    this.updateCartNumber(currentOrder.length);
   }
 
   updateCartNumber(number) {

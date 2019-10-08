@@ -30,7 +30,9 @@ export class CartView {
     <div class="modal-content">
       <h4>You current order:</h4>
       <div id="cart-order">
-      cart
+      ${JSON.parse(localStorage.getItem('currentOrder')).map((item) => {
+        return `<p>ProcuctID: ${item[0]}, count: ${item[1]}</p>`
+    }).join('')}
       </div>
     </div>
     <div class="modal-footer">
@@ -77,10 +79,7 @@ export class CartView {
       this.cartNumberElem.dataset.count = innerNumber - 1;
     }
   }
-    // if (innerNumber = 0) {
-    //   this.addClass(this.cartNumberElem, 'hidden');
-    //   this.cartNumberElem.innerText = innerNumber + 1;
-    // }
+
 
 
 
