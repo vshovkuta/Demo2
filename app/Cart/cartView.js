@@ -19,10 +19,17 @@ export class CartView {
 
     this.root.append(newLi);
     this.cartNumberElem = document.getElementById('cart-number');
+    this.root.addEventListener('click', () => {
+      this.renderModal();
+    });
 
   }
 
   renderModal() {
+    if (document.getElementById('cart-modal')) {
+      document.getElementById('cart-modal').remove();
+    }
+
     let newDiv = document.createElement('div');
     newDiv.setAttribute('id', 'cart-modal');
     newDiv.setAttribute('class', 'modal modal-fixed-footer open');
@@ -30,9 +37,7 @@ export class CartView {
     <div class="modal-content">
       <h4>You current order:</h4>
       <div id="cart-order">
-      ${JSON.parse(localStorage.getItem('currentOrder')).map((item) => {
-        return `<p>ProcuctID: ${item[0]}, count: ${item[1]}</p>`
-    }).join('')}
+      ${this.viewCart()}
       </div>
     </div>
     <div class="modal-footer">
@@ -42,6 +47,17 @@ export class CartView {
 
     document.body.append(newDiv);
     this.addCartEvents();
+  }
+
+  viewCart() {
+    if (localStorage.getItem('currentOrder')) {
+      return JSON.parse(localStorage.getItem('currentOrder')).map((item) => {
+        return `<p>ProcuctID: ${item[0]}, count: ${item[1]}</p>`
+      }).join('')
+    } else {
+      return 'Cart is empty'
+    }
+
   }
 
   addCartEvents() {
